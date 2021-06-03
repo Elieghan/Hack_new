@@ -42,7 +42,6 @@ google-auth==1.28.0
 google-auth-oauthlib==0.4.3
 google-pasta==0.2.0
 googleapis-common-protos==1.53.0
-greenlet @ file:///C:/ci/greenlet_1611958565931/work
 grpcio==1.32.0
 h5py==2.10.0
 HeapDict==1.0.1
