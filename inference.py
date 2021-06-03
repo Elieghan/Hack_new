@@ -29,6 +29,7 @@ def gen_poemlt():
     df = pd.DataFrame(columns=['lyrics'])
     for line in list_text:
         df = df.append({'lyrics': line}, ignore_index=True)
+    df['cleaned'] = df['lyrics'].str.replace("[^A-Za-z.,!?@:; ']","")    
     df['cleaned'] = df['cleaned'].map(lambda x: '^' + x + '$')
     list_cl_q = ' '.join(df['cleaned'].tolist())
     list_cl_char = list(set(list(list_cl_q)))
@@ -38,10 +39,10 @@ def gen_poemlt():
     list_lyrics = []
     for _ in range(Nl):
         list_lyrics.append(generate_text(0.4, model, sample_tokenizer, in_dim))
-    return list_lyrics
+    return '\n'.join(list_lyrics)
 
 
-def generate_text(temperature, model,sample_tokenizer,in_dim):
+def generate_text(temperature, model, sample_tokenizer,in_dim):
     char_pred = '^'
     sequence = np.zeros(99)
     text = [char_pred]
@@ -52,15 +53,15 @@ def generate_text(temperature, model,sample_tokenizer,in_dim):
         y_pred = y_pred_pad[0][lenght - 1][1:] / y_pred_pad[0][lenght - 1][1:].sum()
         y_pred = y_pred ** (1 / temperature)
         y_pred = y_pred / y_pred.sum()
-        car = np.random.choice(in_dim - 1, p=y_pred.ravel()) + 1
+        car = np.random.choice(in_dim, p=y_pred.ravel()) + 1
         if lenght < 99: sequence[lenght] = car
         char_pred = sample_tokenizer.index_word[car]
         text.append(char_pred)
         lenght = len(text)
     del text[-1], text[0]
     return ''.join(text)
-
-
+   
+    
 def main():
     """
     Run the test function and predict_churn
