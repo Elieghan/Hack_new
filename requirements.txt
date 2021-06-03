@@ -6,12 +6,6 @@ google-auth==1.28.0
 google-auth-oauthlib==0.4.3
 google-pasta==0.2.0
 googleapis-common-protos==1.53.0
-grpcio==1.32.0
-h5py==2.10.0
-HeapDict==1.0.1
-imbalanced-learn==0.8.0
-imblearn==0.0
-ipykernel==5.5.3
 json5==0.9.5
 Keras==2.4.3
 Keras-Preprocessing==1.1.2
@@ -19,9 +13,6 @@ mock==4.0.2
 msgpack==1.0.0
 numpy==1.19.5
 oauthlib==3.1.0
-olefile==0.46
-opencv-python==4.5.1.48
-opt-einsum==3.3.0
 packaging==20.4
 pandas==1.2.3
 parse==1.19.0
@@ -47,8 +38,5 @@ termcolor==1.1.0
 tokenizers==0.10.3
 transformers==4.6.1
 typer==0.3.2
-ujson==1.35
-unicodecsv==0.14.1
-urllib3==1.26.4
 virtualenv==20.4.2
 
