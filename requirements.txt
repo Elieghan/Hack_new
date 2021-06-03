@@ -16,11 +16,6 @@ cachetools==4.2.1
 catalogue==2.0.4
 certifi==2020.12.5
 chardet==3.0.4
-clyent==1.2.2
-comtypes==1.1.9
-conda==4.10.1
-conda-build==3.18.11
-conda-verify==3.4.2
 contextlib2==0.6.0.post1
 cssselect==1.1.0
 cycler==0.10.0
